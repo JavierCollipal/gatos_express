@@ -1,4 +1,4 @@
-var express = require('express');
-var router = express.Router();
-
-module.exports = router;
+const catRoutes = require("./cat");
+module.exports = {
+ catRoutes,
+};
