@@ -6,6 +6,8 @@ logs
 npm-debug.log*
 # vscode
 .vscode/
+#pycharm
+.idea
 # env
 .env
 # Runtime data

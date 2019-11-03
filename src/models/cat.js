@@ -1,16 +1,8 @@
 
 module.exports = (sequelize, DataTypes) => {
   return sequelize.define(
-    "user_assigned_tests",
+    "cat",
     {
-      userId: {
-        type: DataTypes.STRING,
-        field: "userId"
-      },
-      testId: {
-        type: DataTypes.STRING,
-        field: "testId"
-      },
       state: {
         type: DataTypes.STRING,
         field: "state"
@@ -21,9 +13,5 @@ module.exports = (sequelize, DataTypes) => {
         autoIncrement: true
       }
     },
-    {
-      createdAt: false,
-      updatedAt: false
-    }
   );
 };
