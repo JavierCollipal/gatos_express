@@ -6,12 +6,13 @@ const {
   database_port,
   database_username,
   database_schema,
+  sequelize_dialect,
 } = require("../config/dotenv");
 
 //for production
 const sequelizeInstance = new sequelizeLibrary(database, database_username, database_password, {
   host: database_host,
-  dialect: "postgres",
+  dialect: sequelize_dialect,
   port: database_port,
   schema: database_schema,
 });
