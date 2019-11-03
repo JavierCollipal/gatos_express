@@ -1,8 +1,18 @@
-version backend funcionando 
-en esta version es posible consumir las 3 rutas definidas en app.js
-/ 
-'/traerTodos' -> consultar los gatos de la collection
-'/crearDB'   -> levantar la collection de gato
-'/crearGato' -> para consumir con postman, todavia no es probada con axios.
-npm install
-definir variables .env en base al .env.example
+## GATOS
+
+Gatos es una REST API basada en express, la cual hace uso de Clean Architecture
+
+## Instalación
+puedes correr la api de manera local o como imagen de docker, recuerda respetar siempre este orden de comandos npm
+```bash
+npm install 
+npm start
+```
+
+## Uso
+```
+POR DOCUMENTAR
+```
+
+## Contributing
+Los pull request son bienvenidos.
