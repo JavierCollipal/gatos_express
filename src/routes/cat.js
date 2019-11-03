@@ -1,6 +1,7 @@
 const express = require('express');
 const catRouter = express.Router();
-const { getAll }  = require("../controllers/cat");
-console.log(typeof getAll);
-catRouter.get('/', getAll);
+const { catController } = require("../controllers/index");
+
+catRouter.get('/', catController.getAll);
+
 module.exports = catRouter;
