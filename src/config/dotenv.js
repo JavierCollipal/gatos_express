@@ -11,4 +11,6 @@ module.exports = {
   rabbit_username: process.env.RABBITMQ_USERNAME,
   rabbit_password: process.env.RABBITMQ_PASSWORD,
   database_schema: process.env.DATABASE_SCHEMA,
+  server_port: process.env.SERVER_PORT,
+  sequelize_dialect: process.env.SEQUELIZE_DIALECT,
 };

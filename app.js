@@ -1,15 +1,11 @@
 //requires
-var express = require('express');
-var cookieParser = require('cookie-parser');
-const cors = require('cors');
+const express = require('express');
+const routes = require("./src/routes/index");
+const appConfig = require("./src/config/express");
+const app = express();
 
-var app = express();
+appConfig(app,express);
 
-
-//configurando express
-app.use(cors())
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+routes(app);
 
 module.exports = app;
