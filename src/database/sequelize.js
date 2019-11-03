@@ -1,4 +1,4 @@
-const sequelizeLibrary = require("sequelize");
+const sequelizeLibrary = require('sequelize');
 const {
   database,
   database_host,
@@ -7,7 +7,7 @@ const {
   database_username,
   database_schema,
   sequelize_dialect,
-} = require("../config/dotenv");
+} = require('../config/dotenv');
 
 //for production
 const sequelizeInstance = new sequelizeLibrary(database, database_username, database_password, {

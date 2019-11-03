@@ -1,5 +1,7 @@
 # public 
 public
+# prettier
+.prettierrc
 # Logs
 logs
 *.log

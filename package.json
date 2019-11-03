@@ -14,6 +14,8 @@
     "sequelize": "^5.21.2"
   },
   "devDependencies": {
-    "eslint": "^6.6.0"
+    "eslint": "^6.6.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-node": "^10.0.0"
   }
 }

@@ -1,17 +1,16 @@
-
 module.exports = (sequelize, DataTypes) => {
   return sequelize.define(
-    "cat",
+    'cat',
     {
       state: {
         type: DataTypes.STRING,
-        field: "state"
+        field: 'state',
       },
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true
-      }
+        autoIncrement: true,
+      },
     },
   );
 };
