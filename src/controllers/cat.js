@@ -1,13 +1,14 @@
+const { catService } = require("../services/index");
+const getAll = (req, res) => {
+    res.send(catService.getAll());
+};
 
-const getAll = (request, response, next) => {
+const create = (req, res) => {
 
 };
 
-const create = (request, response, next) => {
+const update = (req, res) => {
 
 };
 
-const updateByName = async (request, response, next) => {
-
-};
-
+module.exports = { getAll,create};

@@ -1,4 +1,5 @@
 const catRoutes = require("./cat");
-module.exports = {
- catRoutes,
+const apiVersion = "/api/v1";
+module.exports = (app) => {
+    app.use(apiVersion+'/cat',catRoutes);
 };
