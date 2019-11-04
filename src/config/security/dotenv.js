@@ -14,4 +14,5 @@ module.exports = {
   database_schema: process.env.DATABASE_SCHEMA,
   server_port: process.env.SERVER_PORT,
   sequelize_dialect: process.env.SEQUELIZE_DIALECT,
+  log_level: process.env.LOG_LEVEL,
 };
