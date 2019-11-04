@@ -1,0 +1,58 @@
+paths:
+  /api/v1/cat:
+    post:
+      tags:
+        - gatos
+      summary: Si queremos añadir un nuevo gato
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: gato
+          description: propiedades del objeto gato
+          required: true
+          schema:
+            $ref: '#/definitions/cat'
+      responses:
+        201:
+          description: standard post 2xx response
+        400:
+          description: when request doesn't pass object validation
+    get:
+      tags:
+        - gatos
+      summary: Si queremos todos los gatos
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: gatos
+          description: propiedades del arreglo gatos
+          required: true
+          schema:
+            $ref: '#/definitions/cats'
+      responses:
+        201:
+          description: standard post 2xx response
+        400:
+          description: when request doesn't pass object validation
+definitions:
+  cat:
+    type: object
+    properties:
+      nombre:
+        type: string
+      apellido:
+        type: string
+  cats:
+    type: array
+    items:
+      type: array
+      items:
+        type: object
+        properties:
+          nombre:
+            type: string
+          apellido:
+            type: string
+

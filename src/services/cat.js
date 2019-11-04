@@ -16,3 +16,4 @@ const create = req => {
 const update = req => {};
 
 module.exports = { getAll, create };
+
