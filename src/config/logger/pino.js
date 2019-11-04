@@ -3,7 +3,7 @@ const expressPino = require('express-pino-logger');
 const { log_level } = require('../security/dotenv');
 
 const logger = pino({
-  level: 'info',
+  level: log_level | 'info',
   prettyPrint: { colorize: true },
 });
 const expressLogger = expressPino({ logger });
