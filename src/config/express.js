@@ -2,6 +2,7 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const helmet = require('helmet');
 const rateLimiter = require('./rateLimiter');
+
 module.exports = (app, express) => {
   app.use(cors());
   app.use(helmet());
