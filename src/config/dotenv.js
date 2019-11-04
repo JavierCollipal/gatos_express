@@ -1,5 +1,6 @@
-const dotenv = require("dotenv");
+const dotenv = require('dotenv');
 dotenv.config();
+
 module.exports = {
   database: process.env.DATABASE,
   database_username: process.env.DATABASE_USERNAME,

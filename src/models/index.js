@@ -1,5 +1,5 @@
-const cat = require("./cat");
+const cat = require('./cat');
 
 module.exports = {
-  cat
+  cat,
 };
