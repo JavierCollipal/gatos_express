@@ -6,7 +6,9 @@ const catController = {
   },
 
   create(req, res) {
-
+    const data = req.body;
+    const dataPush = catService.create(data);
+    res.send(dataPush);
   },
 
   update(req, res) {
