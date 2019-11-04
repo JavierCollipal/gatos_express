@@ -1,14 +1,18 @@
-
+const data_cats = [
+  { name: 'lanita', last_name: 'aguilar' },
+  { name: 'pelusa', last_name: 'pedriño' },
+  { name: 'esponjoso', last_name: 'jososo' },
+  { name: 'autismotron', last_name: 'baneado' }
+];
 const getAll = () => {
-    return [{nombre: 'lanita',apellido:'aguilar'},{nombre: 'esponjoso',apellido:'jososo'}];
+  return data_cats;
 };
 
-const create = (req) => {
-
+const create = req => {
+  data_cats.push(req);
+  return data_cats;
 };
 
-const update = (req) => {
+const update = req => {};
 
-};
-
-module.exports = { getAll,create};
+module.exports = { getAll, create };
