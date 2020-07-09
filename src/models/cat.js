@@ -1,16 +1,12 @@
-module.exports = (sequelize, DataTypes) => {
-  return sequelize.define(
-    'cat',
-    {
-      state: {
-        type: DataTypes.STRING,
-        field: 'state',
-      },
-      id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
-      },
-    },
-  );
-};
+import { Schema, model } from 'mongoose';
+
+const cats = new Schema({
+	name: {
+		type: String,
+	},
+	age: { type: Number },
+	breed: { type: String },
+	imageUrl: { type: String },
+});
+
+export default model('cats', cats);

@@ -1,7 +1,4 @@
-const app = require('./app');
-const { server_port } = require("./src/config/security/dotenv");
-const { logger } = require("./src/config/logger/pino");
-
-app.listen(server_port, function(){
-    logger.info('Escuchando a los gatos en:',server_port);
-  });
+// Set options as a parameter, environment variable, or rc file.
+// eslint-disable-next-line no-global-assign
+require = require('esm')(module /*, options*/);
+module.exports = require('./src/index.js');

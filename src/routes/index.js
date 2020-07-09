@@ -1,6 +1,6 @@
-const catRoutes = require('./cat');
+import catRouter from './cat';
 const apiVersion = '/api/v1';
 
-module.exports = (app) => {
-  app.use(apiVersion + '/cat', catRoutes);
-};
+export default function (app) {
+	app.use(apiVersion, catRouter);
+}

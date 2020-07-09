@@ -1,8 +1,10 @@
-const express = require('express');
+import express from 'express';
 const catRouter = express.Router();
-const catController = require("../controllers/cat.js");
+import catController from '../controllers/cat';
 
-catRouter.get('/', catController.getAll);
-catRouter.post('/', catController.create);
+catRouter.get('/cats', catController.getAll);
+catRouter.post('/cats', catController.create);
+catRouter.put('/cats/:id', catController.update);
+catRouter.delete('/cats/:id', catController.delete);
 
-module.exports = catRouter;
+export default catRouter;
