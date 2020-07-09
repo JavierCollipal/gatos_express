@@ -9,20 +9,25 @@ const catController = {
 	async create(req, res) {
 		const { body } = req;
 
-		await catService.createOne(body);
+		const cat = await catService.createOne(body);
 
-		res.sendStatus(201);
+		res.status(201).json({ cat });
 	},
 
 	async update(req, res) {
 		const { body } = req;
 		const { id } = req.params;
 
-		await catService.updateOne(id, body);
-		res.sendStatus(201);
+		const cat = await catService.updateOne(id, body);
+
+		res.status(201).json({ cat });
 	},
 
 	async delete(req, res) {
+		const { id } = req.params;
+
+		await catService.deleteOne(id);
+
 		res.sendStatus(200);
 	},
 };
