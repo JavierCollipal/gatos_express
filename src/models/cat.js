@@ -1,6 +1,6 @@
-import { Schema, model } from 'mongoose';
+import mongoose from 'mongoose';
 
-const cats = new Schema({
+const cats = new mongoose.Schema({
 	name: {
 		type: String,
 	},
@@ -9,4 +9,6 @@ const cats = new Schema({
 	imageUrl: { type: String },
 });
 
-export default model('cats', cats);
+class Cat extends mongoose.Model {}
+const CatModel = mongoose.model(Cat, cats, 'cats');
+export default CatModel;

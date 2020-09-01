@@ -1,22 +1,20 @@
-import Cat from '../models/cat';
-
-const catService = {
+export default class CatService {
+	constructor(catModel) {
+		this.catModel = catModel;
+	}
 	async getAll() {
-		return await Cat.find();
-	},
+		return this.catModel.find();
+	}
 	async createOne(cat) {
-		const newCat = new Cat(cat);
+		const newCat = new this.catModel(cat);
 		return await newCat.save();
-	},
+	}
 	async updateOne(id, data) {
-		const foundCat = await Cat.findById(id);
-		console.log(foundCat);
+		const foundCat = await this.catModel.findById(id);
 		const updatedCat = Object.assign(foundCat, data);
 		return await updatedCat.save();
-	},
+	}
 	async deleteOne(id) {
-		await Cat.deleteOne({ _id: id });
-	},
-};
-
-export default catService;
+		await this.catModel.deleteOne({ _id: id });
+	}
+}
