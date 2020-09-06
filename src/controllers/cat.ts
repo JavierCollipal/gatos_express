@@ -1,35 +1,37 @@
+import { Request, Response } from 'express'
+
 export default class CatController {
-	private catService: any;
-	constructor(catService: any) {
-		this.catService = catService;
-	}
-	async getAll(req: any, res: any) {
-		const cats = await this.catService.getAll();
-		res.status(200).json({ cats });
-	}
+  private catService: any
+  constructor(catService: any) {
+    this.catService = catService
+  }
+  async getAll(req: Request, res: Response): Promise<Response> {
+    const cats = await this.catService.getAll()
+    return res.status(200).json({ cats })
+  }
 
-	async create(req: any, res: any) {
-		const { body } = req;
+  async create(req: Request, res: Response): Promise<Response> {
+    const { body } = req
 
-		const cat = await this.catService.createOne(body);
+    const cat = await this.catService.createOne(body)
 
-		res.status(201).json({ cat });
-	}
+    return res.status(201).json({ cat })
+  }
 
-	async update(req: any, res: any) {
-		const { body } = req;
-		const { id } = req.params;
+  async update(req: Request, res: Response): Promise<Response> {
+    const { body } = req
+    const { id } = req.params
 
-		const cat = await this.catService.updateOne(id, body);
+    const cat = await this.catService.updateOne(id, body)
 
-		res.status(201).json({ cat });
-	}
+    return res.status(201).json({ cat })
+  }
 
-	async delete(req: any, res: any) {
-		const { id } = req.params;
+  async delete(req: Request, res: Response): Promise<Response> {
+    const { id } = req.params
 
-		await this.catService.deleteOne(id);
+    await this.catService.deleteOne(id)
 
-		res.sendStatus(200);
-	}
+    return res.sendStatus(200)
+  }
 }
