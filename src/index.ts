@@ -1,6 +1,7 @@
 import app from "./app";
+import { port } from "./config/security/dotenv";
 
 
-app.listen(3000, function () {
-	console.info('Escuchando a los gatos en:', 3000);
+app.listen(port, function () {
+	console.info('Escuchando a los gatos en:', port);
 });
