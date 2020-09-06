@@ -1,10 +1,10 @@
 import express from 'express';
-import CatController from '../controllers/cat';
-import CatService from '../services/cat';
-import CatModel from '../models/cat';
+import Cat from '../models/cat';
+import CatService from "../services/cat";
+import CatController from "../controllers/cat";
 const catRouter = express.Router();
 
-const catService = new CatService(CatModel);
+const catService = new CatService(Cat);
 const catController = new CatController(catService);
 
 catRouter.get('/cats', (req, res) => catController.getAll(req, res));
