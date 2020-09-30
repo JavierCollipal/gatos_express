@@ -7,7 +7,7 @@ export interface Cat extends mongoose.Document {
   imageUrl: string
 }
 export interface CatModel {
-  find(): Cat[]
-  deleteOne(): number
+  find(): Promise<Cat[]>
+  deleteOne(options: any): number
   findById(id): Cat
 }
