@@ -1,4 +1,4 @@
-import mongoose, { Schema, model } from 'mongoose'
+import mongoose, { Schema, model, Model } from 'mongoose'
 import { Cat } from 'services/catModel.interface'
 
 export const catSchema: Schema = new Schema({
@@ -11,4 +11,7 @@ export const catSchema: Schema = new Schema({
   state: { type: Number, default: 0 }
 })
 
-export default model<Cat>('Cat', catSchema)
+export type CatModel = Model<Cat>
+
+const CatModel = model<Cat>('Cat', catSchema)
+export default CatModel

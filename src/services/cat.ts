@@ -1,4 +1,5 @@
-import { Cat, CatModel } from 'services/catModel.interface'
+import { Cat } from 'services/catModel.interface'
+import { CatModel } from '../models/cat'
 
 export default class CatService {
   private readonly catModel: CatModel
@@ -6,12 +7,11 @@ export default class CatService {
     this.catModel = catModel
   }
 
-  getAll(): Promise<Cat[]> {
+  async getAll(): Promise<Cat[]> {
     return this.catModel.find()
   }
 
   async createOne(cat: Cat): Promise<Cat> {
-    // @ts-ignore
     const newCat = new this.catModel(cat)
     return await newCat.save()
   }
@@ -22,7 +22,7 @@ export default class CatService {
     return await updatedCat.save()
   }
 
-  async deleteOne(id: string): Promise<number> {
+  async deleteOne(id: string): Promise<any> {
     return this.catModel.deleteOne({ _id: id })
   }
 }

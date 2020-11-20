@@ -1,10 +1,9 @@
 import express, { Request, Response } from 'express'
-import Cat from '../models/cat'
 import CatService from '../services/cat'
 import CatController from '../controllers/cat'
+import CatModel from '../models/cat'
 const catRouter = express.Router()
-
-const catService = new CatService(Cat)
+const catService = new CatService(CatModel)
 const catController = new CatController(catService)
 
 catRouter.get('/cats', (req: Request, res: Response) => catController.getAll(req, res))
